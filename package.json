@@ -1,0 +1,68 @@
+{
+  "name": "highball-backend",
+  "version": "1.0.0",
+  "description": "nodejs portal backend implements based on eggjs",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "decimal.js": "^10.4.3",
+    "dotenv": "^16.4.5",
+    "egg": "^3.22.0",
+    "egg-router-plus": "^2.0.0",
+    "egg-scripts": "^3.0.0",
+    "egg-sequelize": "^6.0.0",
+    "egg-validate": "^2.0.2",
+    "egg-view-nunjucks": "^2.3.0",
+    "egg-watcher-chokidar": "^2.1.0",
+    "file-type": "^16.5.3",
+    "jsonwebtoken": "^9.0.2",
+    "koa2-swagger-ui": "^5.10.0",
+    "moment": "^2.30.1",
+    "mysql2": "^3.10.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "autod": "^2.4.2",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.14.0",
+    "eslint": "^9.5.0",
+    "eslint-config-egg": "^13.1.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "egg": {
+    "tsHelper": {
+      "watchOptions": {
+        "usePolling": true
+      }
+    }
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=highball",
+    "stop": "egg-scripts stop --title=highball",
+    "dev": "egg-bin dev --title=highball --dts",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "migrate:new": "egg-sequelize migration:create",
+    "migrate:up": "egg-sequelize db:migrate",
+    "migrate:down": "egg-sequelize db:migrate:undo"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "v",
+  "license": "MIT"
+}
